@@ -1,0 +1,46 @@
+@use "../abstracts" as *;
+
+#andere_werken {
+  color: white;
+  padding-block: var(--spacer);
+  padding-inline: var(--lg-spacer);
+  h3 {
+    padding-block-end: var(--spacer);
+  }
+  ul {
+    margin-block: 0;
+    padding-block: var(--spacer);
+  }
+  a {
+    color: white;
+  }
+  .foto-list {
+    display: none;
+  }
+
+  @include respond-to(small) {
+    ul {
+      list-style: none;
+    }
+    .text-list {
+      display: none;
+    }
+    .foto-list {
+      margin-inline: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: var(--spacer);
+      grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+      border: 4px solid $roze;
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.flow > :where(:not(:first-child)) {
+  margin-block-start: var(--flow-spacer, var(--spacer));
+}
+// use :where to not increase specificity
+// .flow > * + * {} is the same
+
+// adds margin-top on all but the first child.
+// logical property veranderd ook van kant als de taal van rechts naar links of onder naar boven wordt geschreven
+
+// je moet in een andere class van hetzelfde element bv.
+// div class="flow card"
+// in .card een --flow-spacer: 1em; definieren
+
+// of een --spacer in de root om overal de zelfde spacing te hebben
+//  :root { --spacer 2em;}
+
+// verschil tussen --flow-spacer en --spacer
+// --spacer kan ook voor andere dingen gebruikt worden (padding), niet enkel in de flow class

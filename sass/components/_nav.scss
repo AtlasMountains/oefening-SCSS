@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+
+#navigation {
+  color: white;
+  ul {
+    padding-inline: 0;
+    margin-block: 0;
+  }
+  a {
+    color: white;
+  }
+}
+
+#navigation:hover {
+  background-color: $grijs5;
+  a {
+    color: $tekstkleur;
+  }
+  .border-underline {
+    border-block-end: 2px dotted $tekstkleur;
+  }
+}
+
+#menu {
+  @include respond-to(small) {
+    background-color: $grijs2;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #titel {
+      padding-inline-start: 0;
+      margin: 0;
+    }
+
+    #navigation {
+      .border-underline {
+        border-block-end: 0;
+      }
+      ul {
+        display: flex;
+        li {
+          margin: 0;
+          padding-inline: var(--spacer);
+        }
+      }
+    }
+    #navigation:hover {
+      background-color: $grijs2;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $blauw;
+      }
+    }
+  }
+}

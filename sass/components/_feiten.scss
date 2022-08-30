@@ -1,0 +1,8 @@
+@use "../abstracts" as *;
+
+#feiten {
+  background-color: $grijs4;
+  color: white;
+  padding-inline: var(--lg-spacer);
+  padding-block: var(--lg-spacer);
+}

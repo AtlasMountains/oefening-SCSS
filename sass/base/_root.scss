@@ -1,0 +1,24 @@
+@use "../abstracts" as *;
+
+:root {
+  --xlg-spacer: #{$xlg-spacer};
+  --lg-spacer: #{$lg-spacer};
+  --spacer: #{$spacer};
+  --small-spacer: #{$small-spacer};
+  --xsmall-spacer: #{$xsmall-spacer};
+
+  // make font-size utility variables
+  @each $screen-size, $property in $font-sizes {
+    @if $screen-size == small {
+      @each $prop, $value in $property {
+        --fs-#{$prop}: #{$value};
+      }
+    } @else {
+      @include respond-to($screen-size) {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
+      }
+    }
+  }
+}

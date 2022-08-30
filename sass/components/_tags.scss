@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+#tags {
+  background-color: $grijs3;
+  color: white;
+
+  padding-block: var(--lg-spacer);
+  padding-inline: var(--spacer);
+  @include respond-to(medium) {
+    padding-inline: var(--lg-spacer);
+  }
+
+  .tag {
+    display: flex;
+    justify-content: space-between;
+    background-color: $grijs1;
+    margin-block: var(--spacer);
+    padding-inline: var(--spacer);
+    padding-block: var(--small-spacer);
+    border-radius: var(--small-spacer);
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .tag:hover {
+    background-color: $grijs4;
+  }
+}

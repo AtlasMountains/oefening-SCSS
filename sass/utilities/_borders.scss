@@ -1,0 +1,5 @@
+@use "../abstracts" as *;
+
+.border-underline {
+  border-block-end: 2px dotted white;
+}

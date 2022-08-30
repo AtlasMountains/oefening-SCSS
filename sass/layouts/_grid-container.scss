@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+
+body {
+  @include respond-to(small) {
+    background-color: $rood;
+    background-image: url(/img/rothko/rothko17.jpg);
+  }
+}
+
+#grid-container {
+  @include respond-to(small) {
+    display: grid;
+    margin-block-start: var(--spacer);
+    row-gap: var(--spacer);
+    margin-block-end: 0;
+    grid-template-columns:
+      1fr calc(7 / 10 * min(100vw, 1100px)) calc(3 / 10 * min(100vw, 1100px))
+      1fr;
+
+    grid-template-areas:
+      "back1 top top back2"
+      ". main aside .";
+
+    #background-grijs2-1 {
+      background-color: $grijs2;
+      grid-area: back1;
+      display: block;
+    }
+    #background-grijs2-2 {
+      background-color: $grijs2;
+      grid-area: back2;
+      display: block;
+    }
+    #menu {
+      grid-area: top;
+    }
+    #aside {
+      grid-area: aside;
+      background-color: $grijs1;
+      margin-block-end: calc(-2 * var(--spacer));
+      filter: drop-shadow(10px -10px 10px rgba(0, 0, 0, 0.596));
+    }
+
+    #main {
+      grid-area: main;
+      background-color: white;
+      margin-block-end: calc(-2 * var(--spacer));
+      padding-inline: 7%;
+      padding-block: 4%;
+      filter: drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.596));
+    }
+  }
+}

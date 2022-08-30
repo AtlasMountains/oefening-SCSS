@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+.verberg-klein {
+  display: none;
+
+  @include respond-to(small) {
+    display: block;
+  }
+}

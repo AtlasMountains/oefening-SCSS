@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+// make font-sizes classes that use the variable font-sizes made in root font-sizes
+@each $size, $property in $font-sizes {
+  @if $size == small {
+    @each $prop, $value in $property {
+      .fs-#{$prop} {
+        font-size: var(--fs-#{$prop});
+      }
+    }
+  }
+}
