@@ -3,7 +3,7 @@
 body {
   @include respond-to(small) {
     background-color: $rood;
-    background-image: url(/img/rothko/rothko17.jpg);
+    background-image: url(img/rothko/rothko17.jpg);
   }
 }
 

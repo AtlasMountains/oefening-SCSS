@@ -75,7 +75,6 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
 *::before,
 *::after {
@@ -312,7 +311,7 @@ li {
 @media only screen and (min-width: 640px) {
   body {
     background-color: #ff0000;
-    background-image: url(/img/rothko/rothko17.jpg);
+    background-image: url(img/rothko/rothko17.jpg);
   }
 }
 
